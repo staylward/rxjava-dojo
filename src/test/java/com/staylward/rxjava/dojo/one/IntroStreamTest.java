@@ -14,13 +14,13 @@ public class IntroStreamTest {
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         System.setOut(new PrintStream(outContent));
         System.setErr(new PrintStream(errContent));
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         System.setOut(null);
         System.setErr(null);
     }

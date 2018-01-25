@@ -8,7 +8,7 @@ public class IntroStream {
 
     public static void helloWorld() {
         Observable<String> helloWorldObservable = null;
-        // set helloWorldObservable to just contain the desired output
+        helloWorldObservable = Observable.just(desiredOutput);
         helloWorldObservable.subscribe(System.out::print);
     }
 }

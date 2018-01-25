@@ -6,7 +6,9 @@ import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.List;
 
+import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class IntroStreamTest {
@@ -32,5 +34,19 @@ public class IntroStreamTest {
 
         // Then
         assertThat(outContent.toString()).contains("Hello World!");
+    }
+
+    @Test
+    public void shouldPrintAllInputToStdOut() {
+        // Given
+        List<String> inputStrings = asList("Test", "Hello", "World", "!");
+
+        // When
+        IntroStream.printList(inputStrings);
+
+        // Then
+        assertThat(outContent.toString()).contains(inputStrings.get(0));
+        assertThat(outContent.toString()).contains(inputStrings.get(1));
+        assertThat(outContent.toString()).contains(inputStrings.get(2));
     }
 }

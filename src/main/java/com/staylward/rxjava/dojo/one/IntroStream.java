@@ -16,7 +16,7 @@ public class IntroStream {
 
     public static void printList(List<String> inputStrings) {
         Observable test = null;
-        // create an instance of an observable for test that accepts the input strings
+        test = Observable.from(inputStrings);
         test.subscribe(System.out::println);
     }
 }

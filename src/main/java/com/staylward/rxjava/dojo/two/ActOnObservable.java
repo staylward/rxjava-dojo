@@ -10,7 +10,7 @@ public class ActOnObservable {
     public static List<Integer> addOneToEach(List<Integer> inputs) {
         List<Integer> results = new ArrayList<>();
         Observable.from(inputs)
-                // Add your function here
+                .map(value -> value + 1)
                 .subscribe(results::add);
         return results;
     }

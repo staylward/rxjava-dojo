@@ -19,7 +19,7 @@ public class ActOnObservable {
     public static List<Integer> filterList(List<Integer> inputs, Func1<Integer, Boolean> filter) {
         List<Integer> results = new ArrayList<>();
         Observable.from(inputs)
-                // Add you function here
+                .filter(filter)
                 .subscribe(results::add);
         return results;
     }

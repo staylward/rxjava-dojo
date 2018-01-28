@@ -1,6 +1,7 @@
 package com.staylward.rxjava.dojo.two;
 
 import rx.Observable;
+import rx.functions.Func1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,14 @@ public class ActOnObservable {
         List<Integer> results = new ArrayList<>();
         Observable.from(inputs)
                 // Add your function here
+                .subscribe(results::add);
+        return results;
+    }
+
+    public static List<Integer> filterList(List<Integer> inputs, Func1<Integer, Boolean> filter) {
+        List<Integer> results = new ArrayList<>();
+        Observable.from(inputs)
+                // Add you function here
                 .subscribe(results::add);
         return results;
     }

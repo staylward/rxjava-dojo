@@ -1,6 +1,7 @@
 package com.staylward.rxjava.dojo.two;
 
 import org.junit.Test;
+import rx.Observable;
 import rx.functions.Func1;
 
 import java.util.List;
@@ -50,5 +51,20 @@ public class ActOnObservableTest {
         // Then
         assertThat(results).hasSize(3);
         assertThat(results).containsExactly(1,3,5);
+    }
+
+    @Test
+    public void shouldMergeBothListTogether() {
+        // Given
+        Observable<String> surfingFriends = Observable.from(asList("Nick", "Hugh"));
+        Observable<String> workFriends = Observable.from(asList("André", "JP", "Gilberto"));
+
+        // When
+        List<String> results = ActOnObservable.combineObservables(surfingFriends, workFriends);
+
+        // Then
+        assertThat(results).hasSize(5);
+        assertThat(results).containsOnlyOnce("Nick", "Hugh");
+        assertThat(results).containsOnlyOnce("André", "JP", "Gilberto");
     }
 }

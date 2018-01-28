@@ -26,7 +26,8 @@ public class ActOnObservable {
 
     public static List<String> combineObservables(Observable<String> observable1, Observable<String> observable2) {
         List<String> results = new ArrayList<>();
-        // Add your function here to combine both the observables and then return them
+        Observable.merge(observable1, observable2)
+                .subscribe(results::add);
         return results;
     }
 }

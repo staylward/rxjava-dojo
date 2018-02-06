@@ -91,4 +91,28 @@ public class ActOnObservableTest {
         // Then
         assertThat(result).isEqualTo("Drink");
     }
+
+    @Test
+    public void shouldTakeLastWordStartingWithC() {
+        // Given
+        List<String> inputs = asList("Apple", "Banana", "Cake", "Drink", "Carrot", "Berries", "Mango");
+
+        // When
+        String result = ActOnObservable.returnLast(inputs, "C");
+
+        // Then
+        assertThat(result).isEqualTo("Carrot");
+    }
+
+    @Test
+    public void shouldTakeLastWordStartingWithB() {
+        // Given
+        List<String> inputs = asList("Apple", "Banana", "Cake", "Drink", "Carrot", "Berries", "Mango");
+
+        // When
+        String result = ActOnObservable.returnLast(inputs, "B");
+
+        // Then
+        assertThat(result).isEqualTo("Berries");
+    }
 }

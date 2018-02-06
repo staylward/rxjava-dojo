@@ -30,4 +30,11 @@ public class ActOnObservable {
                 .subscribe(results::add);
         return results;
     }
+
+    public static String returnFirst(List<String> inputs, String firstLetter) {
+        return Observable.from(inputs)
+                // Add your function here to filter the inputs only returning the first
+                .toBlocking()
+                .single();
+    }
 }

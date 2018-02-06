@@ -69,7 +69,7 @@ public class ActOnObservableTest {
     }
 
     @Test
-    public void shouldReturnFirstStartingWithC() {
+    public void shouldTakeFirstWordStartingWithC() {
         // Given
         List<String> inputs = asList("Apple", "Banana", "Cake", "Drink", "Carrot");
 
@@ -81,7 +81,7 @@ public class ActOnObservableTest {
     }
 
     @Test
-    public void shouldReturnFirstStartingWithD() {
+    public void shouldTakeFirstWordStartingWithD() {
         // Given
         List<String> inputs = asList("Apple", "Banana", "Cake", "Drink", "Carrot");
 

@@ -40,8 +40,8 @@ public class ActOnObservable {
 
     public static String returnLast(List<String> inputs, String firstLetter) {
         return Observable.from(inputs)
-                // Function to filter here
-                // Function to get last value here
+                .filter(input -> input.startsWith(firstLetter))
+                .lastOrDefault("")
                 .toBlocking()
                 .single();
     }

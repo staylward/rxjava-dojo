@@ -67,4 +67,28 @@ public class ActOnObservableTest {
         assertThat(results).containsOnlyOnce("Nick", "Hugh");
         assertThat(results).containsOnlyOnce("André", "JP", "Gilberto");
     }
+
+    @Test
+    public void shouldReturnFirstStartingWithC() {
+        // Given
+        List<String> inputs = asList("Apple", "Banana", "Cake", "Drink", "Carrot");
+
+        // When
+        String result = ActOnObservable.returnFirst(inputs, "C");
+
+        // Then
+        assertThat(result).isEqualTo("Cake");
+    }
+
+    @Test
+    public void shouldReturnFirstStartingWithD() {
+        // Given
+        List<String> inputs = asList("Apple", "Banana", "Cake", "Drink", "Carrot");
+
+        // When
+        String result = ActOnObservable.returnFirst(inputs, "D");
+
+        // Then
+        assertThat(result).isEqualTo("Drink");
+    }
 }

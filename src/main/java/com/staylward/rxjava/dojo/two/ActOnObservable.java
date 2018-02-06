@@ -29,4 +29,11 @@ public class ActOnObservable {
         // Add your function here to combine both the observables and then return them
         return results;
     }
+
+    public static String returnFirst(List<String> inputs, String firstLetter) {
+        return Observable.from(inputs)
+                // Add your function here to filter the inputs only returning the first
+                .toBlocking()
+                .single();
+    }
 }
